@@ -18,7 +18,7 @@ searchButton.addEventListener("click",async()=>{
 
 const fetchNewQuery=async(query)=>{
     try {
-        const url = `https://newsapi.org/v2/everything?q=${query}&pageSize=30&apiKey=${apiKey}`;
+        const url = `https://newsapi.org/v2/everything?q=${query}&pageSize=50&apiKey=${apiKey}`;
         const response = await fetch(url);
         const data=await response.json();
         console.log(response.data);
@@ -31,7 +31,7 @@ const fetchNewQuery=async(query)=>{
 
 const randomData = async () => {
     try {
-        const url = `https://newsapi.org/v2/top-headlines?country=us&pageSize=30&apiKey=${apiKey}`;
+        const url = `https://newsapi.org/v2/top-headlines?country=us&pageSize=50&apiKey=${apiKey}`;
         const response = await axios.get(url);
         console.log(response.data);
         return response.data.articles;
